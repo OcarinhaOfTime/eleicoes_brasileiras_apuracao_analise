@@ -112,29 +112,6 @@ fig = plot_counting(
 )
 ```
 
-### E o modo `geographic` ou `random`?
-
-Esses modos apareceram em **experimentos anteriores**, mas **não estão implementados neste notebook**. Eles representam outra abordagem: **reordenar artificialmente as seções** (por localização geográfica ou por sorteio) e recalcular os resultados acumulados. Isso cria **simulações contrafactuais**, não a ordem efetiva da apuração. Podem ser úteis para investigar como a ordenação influencia a forma das curvas, mas seus resultados **não devem ser apresentados como históricos reais**.
-
-Nesta versão, `progress` e `sections` são **eixos**, não modos de simulação. A reconstrução cronológica de **2018** segue horários registrados; **2022** usa o histórico oficial; **2026** usa parciais arquivadas por terceiros.
-
-## Limitações e interpretação
-
-- **Granularidade desigual:** 2018 agrupa seções pelo minuto de primeira totalização; 2022 utiliza atualizações oficiais; 2026 utiliza capturas arquivadas de frequência menor. Comparações de **micro-oscilações**, frequência de inversões e supostas anomalias precisam considerar essa diferença.
-- **Cronologia de 2018 reconstruída:** os votos são finais, mas sua entrada é aproximada pelo horário de primeira totalização. A curva não representa necessariamente cada estado intermediário publicado ao eleitor.
-- **Cobertura de 2026:** arquivos de projetos independentes preservam parciais do TSE, mas podem omitir atualizações intermediárias. Seu conteúdo pode mudar se os repositórios de origem forem atualizados.
-- **Eixo de progresso:** percentual de **seções** totalizadas não equivale necessariamente ao percentual de **votos** totalizados, pois as seções têm tamanhos diferentes.
-- **Dados acumulados:** curvas suavizadas, inclinações e cruzamentos de liderança não constituem, isoladamente, testes de fraude. Sua interpretação depende da composição geográfica dos lotes, da logística de transmissão e de hipóteses estatísticas explícitas.
-- **Escopo:** este é um instrumento **exploratório de visualização**. Não implementa auditoria criptográfica, detecção automática de anomalias, inferência causal, testes formais de fraude ou estimativas contrafactuais de resultado.
-
-Para pesquisas que dependam de valores e versões exatos, recomenda-se **registrar a data de acesso e o hash dos arquivos baixados**, especialmente os JSONs hospedados em branches `main` de terceiros.
-
-## Reprodutibilidade e colaboração
-
-O notebook utiliza uma pasta local `data/` para downloads e cache. Ao publicar o repositório, é recomendável adicionar `data/` ao `.gitignore`, evitando versionar arquivos volumosos; eles podem ser recuperados pelos links acima.
-
-Contribuições, revisões de código, correções de fontes e propostas de testes estatísticos são bem-vindas. O objetivo é manter uma base acessível, verificável e aberta à crítica — **sem pressupor conclusões políticas ou eleitorais antes da análise dos dados**.
-
 ---
 
 **Nota:** este repositório é um projeto independente de exploração de dados públicos. Não possui vínculo institucional com o TSE, com o Números da Eleição ou com os projetos que preservaram as parciais de 2026.
